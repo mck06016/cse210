@@ -4,7 +4,7 @@ public class Prompt
 {
     List<int> usedPrompts = new List<int>();
 
-    public string DisplayPrompts()
+    public string GetPrompts()
     {
       string prompt ="";
       List<string> prompts = new List<string>()
@@ -50,12 +50,12 @@ public class Prompt
       {
         if (!usedPrompts.Contains(num))
         {
-          Console.WriteLine($"{num +1}.{prompts[num]}");
+          //Console.WriteLine($"{num +1}.{prompts[num]}");
           usedPrompts.Add(num);
           prompt = prompts[num];
         }
         else{
-          DisplayPrompts();
+          GetPrompts();
         }
       }
       else
