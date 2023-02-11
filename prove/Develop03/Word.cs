@@ -1,29 +1,45 @@
 using System; 
-using System.IO;
 
 public class Word
 {
-  public string _word;
+  private string _word;
 
-  public bool _isHidden;
-
-  public string _hiddenWord;
+  private bool _isHidden;
 
   
 
-  public Word()
+  public Word(string word)
   {
-
+    _word = word;
+    _isHidden = false;
 
   }
 
-  public void Display ()
-  {
-
-  }
 
   public void Hide()
   {
-    
+    char[] characters = _word.ToCharArray();
+
+    for (int i = 0; i < characters.Length; i++)
+    {
+      if (characters[i] != ',' && characters[i] != ':' && characters[i] != '.')  // Add more puncturation as needed !
+      {
+        characters[i] = '_';
+      }
+    }
+   // _word = characters.ToString();
+   _word = new string(characters);
+    _isHidden = true;
+
   }
+
+  public bool GetIsHidden()
+  {
+    return _isHidden;
+  }
+    public string GetWord()
+  {
+    return _word;
+  }
+
 }

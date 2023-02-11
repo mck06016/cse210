@@ -3,54 +3,52 @@ using System;
 public class Reference
 {
 
-  public string _bookName; 
+  public string _bookName = "John"; 
 
-  public int _chapter; 
+  public string _chapter = "11"; 
 
-  public int _verseStart;
-
-  public int _verseEnd; 
+  public string _verse = "6";
 
 
-
-  public void getBook()
+  public string getBook()
   {
-    _bookName = "1 Nephi";
+    return _bookName;
 
   }
 
-  public void getChapter()
+  public string getChapter()
   {
-    _chapter = 1;
+    return _chapter;
   }
 
-  public void getVerseStart()
+  public string getVerse()
   {
-    _verseStart = 1;
+    return _verse;
   }
 
-  public void getVerseEnd()
-  {
-    _verseEnd = 1;
-  }
-
-
- public Reference()
-  {
-
-  }
-
-  public Reference(string Book, int Chapter, int Verse)
-  {
-
-  }
-
-  public Reference (string Book, int Chapter, int startVerse, int endVerse)
+  public Reference()
   {
     
+  }
+
+  public Reference(string Book, string Chapter, string Verse)
+  {
+    _bookName = Book;
+    _chapter = Chapter;
+    _verse = Verse;
+  }
+
+  public Reference (string Book, string Chapter, string startVerse, string endVerse)
+  {
+    _bookName = Book;
+    _chapter = Chapter;
+    _verse = $"{startVerse}-{endVerse}"; 
 
   }
 
-
+  public string GetReferenceToString()
+  {
+    return $"{_bookName} {_chapter}:{_verse}";
+  }
 
 }
