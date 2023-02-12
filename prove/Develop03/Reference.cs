@@ -3,12 +3,11 @@ using System;
 public class Reference
 {
 
-  private string _bookName = "John"; 
+  private string _bookName; 
 
-  private string _chapter = "11"; 
+  private string _chapter; 
 
-  private string _verse = "6";
-
+  private string _verse;
 
   public string getBook()
   {
@@ -25,6 +24,25 @@ public class Reference
   {
     return _verse;
   }
+
+  public string setBook(string Book)
+  {
+    _bookName = Book;
+    return _bookName;
+  }
+
+  public string setChapter(string Chapter)
+  {
+    _chapter = Chapter;
+    return _chapter;
+  }
+
+  public string setVerse1(string Verse1)
+  {
+    _verse = Verse1;
+    return _verse;
+  }
+
 
   public Reference()
   {

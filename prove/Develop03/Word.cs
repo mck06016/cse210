@@ -22,13 +22,12 @@ public class Word
 
     for (int i = 0; i < characters.Length; i++)
     {
-      if (characters[i] != ',' && characters[i] != ':' && characters[i] != '.')  // Add more puncturation as needed !
+      if (characters[i] != ',' && characters[i] != ':' && characters[i] != '.' && characters[i] !=';' && characters[i] !='"' && characters[i] !='?' && characters[i] !=']' && characters[i] !='[' && characters[i] !='}' && characters[i] !='{' && characters[i] !='(' && characters[i] !=')' && characters[i] !='!' && characters[i] !='~' && characters[i] !='`' && characters[i] != '—')  // Tried to cover the parts of puncuation
       {
         characters[i] = '_';
       }
     }
-   // _word = characters.ToString();
-   _word = new string(characters);
+    _word = new string(characters);
     _isHidden = true;
 
   }
