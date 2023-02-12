@@ -3,11 +3,11 @@ using System;
 public class Reference
 {
 
-  public string _bookName = "John"; 
+  private string _bookName = "John"; 
 
-  public string _chapter = "11"; 
+  private string _chapter = "11"; 
 
-  public string _verse = "6";
+  private string _verse = "6";
 
 
   public string getBook()

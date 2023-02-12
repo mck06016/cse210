@@ -5,10 +5,10 @@ public class Scripture
 
   Reference myReference = new Reference();
 
-  public List<Word> scripture = new List<Word>();
+  private List<Word> scripture = new List<Word>();
 
 
-  public string passage = "Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.";
+  private string passage = "Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.";
 
   public string[] wordList;
 
