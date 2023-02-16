@@ -8,7 +8,7 @@ public class WrittingAssignment : Assignment
   }
 
   public WrittingAssignment(string studentName, string topic, string title)
-    : base(studentName, topic)  // I did okay until here - - this part mixed me up. 
+    : base(studentName, topic)  // I did okay until here - - this part mixed me up. and I reviewed the code from the sample solution - - took me another bunch to find the additional text on line 1
   {
     _title = title; 
 
