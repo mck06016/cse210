@@ -1,0 +1,25 @@
+Object: Prompts
+Responsibilities: 
+* to hold a list of prompts for journal entries.
+Behaviors: 
+* to return a random prompt when called upon.
+* (extend) set to not provide duplicate prompts.
+
+Object: Entry
+Responsibilities: 
+* to record a journal entry for a given prompt and to store the prompt and entry with a time stamp.
+Behaviors: 
+* generates a prompt, writes the prompt to the screen the prompts for entry and reads the entry.
+* stores the date, prompt, and entry.
+
+Object: Journal
+Responsibilities: 
+* stores a list of entries.
+* writes the entries to the screen.
+* d
+Behaviors: 
+*
+
+
+** Class Diagrams **
+
