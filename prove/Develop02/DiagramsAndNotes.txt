@@ -16,10 +16,64 @@ Object: Journal
 Responsibilities: 
 * stores a list of entries.
 * writes the entries to the screen.
-* d
+* Saves and Loads a list of Entries
 Behaviors: 
-*
+* calls the Entry opbject and records a new entry and stores it in a list
+* Displays all entries
+* Loads Entries
+* Saves Entries
 
 
 ** Class Diagrams **
+
+Class: Prompts
+Member Variables: 
+_usedPrompts : List<iint>
+_prompt: string
+_prompts: List<_prompts>
+
+Methods: 
+GetPrompts(): string
+* A list of prompts.
+* Returns a random prompt.
+
+Prompt(): string
+* Tracks used prompts.
+* Returns Prompt if it is not used in the previous entries.
+
+
+Class: Entry
+Member Variables: 
+_dateTime: DateTime
+_date: string
+_newPrompt: Prompt()
+_prompt: string
+_entry: string
+
+Methods: 
+Entry(): void
+
+Write(): void
+* Stores the date, prompt, and entry.
+* Writes to the screen the prompt, then prompts for Entry, and reads the Entry.
+
+Class: Journal
+Member Variables: 
+_entryList: List<Entry>
+_loadList: List<Entry>
+_fileName: string
+
+
+Methods: 
+Journal()
+
+Write()
+
+Display()
+
+Load ()
+
+Save()
+
+
 
