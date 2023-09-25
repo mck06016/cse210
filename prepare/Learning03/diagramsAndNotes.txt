@@ -1,0 +1,27 @@
+Encapsulation - Encapsulation is a method of restricting access to parts of the code from other parts of the program. The function of Getters and setters can be used to access this information. This allows us to isolate specific parts of the code so that if we want to change how the balance is calculated or gotten, then we only need to change code within the class, and not how the functions or methods that are used out side the class. 
+
+External code does not interact with private code. Public interface is what is used to get the code and to access the program. 
+
+Constructors - Special method called automatically when an object is created. Their purpose is to help set up the initial state of an object. The name of the constructor must match the class name and the return type is left empty. The simplest constructor is a no-argument constructor, that allows an object o be created with out specifying any extra information. 
+
+** Class Diagrams
+
+Class: Fraction
+Member Variables: 
+* _top: int
+* _bottom: int
+
+Constructors: 
+* Fraction()
+* Fraction(wholeNumber: int)
+* Fraction(top: int, bottom: int)
+
+Methods (Getters/Setters):
+GetTop()
+SetTop(top: int)
+GetBottome()
+Set Bottom(bottom: int)
+
+Methods:
+GetFractionString(): string
+GetDecimalValue(): doubble
