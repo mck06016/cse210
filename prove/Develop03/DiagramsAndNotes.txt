@@ -1,0 +1,141 @@
+Week 03 Develop: Scripture Memorizer
+
+Specification
+Functional requirements
+Your program must do the following:
+  Store a scripture, including both the reference (for example "John 3:16") and the text of the scripture.
+  Accommodate scriptures with multiple verses, such as "Proverbs 3:5-6".
+  Clear the console screen and display the complete scripture, including the reference and the text.
+  Prompt the user to press the enter key or type quit.
+  If the user types quit, the program should end.
+  If the user presses the enter key (without typing quit), the program should hide a few random words in the scripture, clear the console screen, and display the scripture again.
+  The program should continue prompting the user and hiding more words until all words in the scripture are hidden.
+  When all words in the scripture are hidden, the program should end.
+  When selecting the random words to hide, for the core requirements, you can select any word at random, even if the word was already hidden. (As a stretch challenge, try to randomly select from only those words that are not already hidden.)
+Design Requirements
+In addition your program must:
+  Use the principles of Encapsulation, including proper use of classes, methods, public/private access modifiers, and follow good style throughout.
+  Contain at least 3 classes in addition to the Program class: one for the scripture itself, one for the reference (for example "John 3:16"), and to represent a word in the scripture.
+  Provide multiple constructors for the scripture reference to handle the case of a single verse and a verse range ("Proverbs 3:5" or "Proverbs 3:5-6")
+
+Showing Creativity and Exceeding Requirements
+  Have the program to load scriptures from a files.
+
+
+Class: Word
+Member Variables: 
+* _word: string
+* _isHidden: bool
+
+Constructors: 
+* Word(word: string)
+* - - Default value setting _word=word and _isHidden=false
+
+Methods (Getters/Setters): 
+* GetIsHidden()
+* GetWord()
+
+Methods: 
+* Hide()
+* - - To hid all leters in word.
+
+
+
+Class: Reference
+Member Variables: 
+* _bookName: string
+* _chapter: string
+* _verse: string;
+
+
+Constructors: 
+* Reference()
+* Reference (Book: string, Chapter: string, Verse: string)
+* Reference (Book: string, Chapter: string, startVerse: string, endVerse: string)
+
+
+Methods (Getters/Setters): 
+* GetBook(())
+* GetChapter()
+* GetVerse()
+* SetBook()
+* SetChapter()
+* SetVerse()
+
+Methods: 
+* GetReferenceToString()
+ - - Returns "BookName Chapter: Verse"
+
+
+Class: Scripture
+Member Variables: 
+
+* _book: string
+* _chapter: string
+* _startVerse: string
+* _endVerse: string
+* _passage: string
+
+* _Passages: List<>
+* _filename: string
+
+Constructors: 
+Scripture()
+
+Methods (Getters/Setters): 
+* GetBook()
+* GetChapter()
+* GetStartVerse()
+* GetEndVerse()
+* GetPassage()
+* SetBook()
+* SetChapter()
+* SetStartVerse()
+* SetEndVerse()
+
+* 
+
+
+Methods: 
+* Display()
+- Clears screen and displays Scripture.
+-
+
+
+
+
+Class: Memorizer
+Member Variables: 
+
+
+Constructors: 
+* Memorizer() - returns the scripture as a list of words.
+
+Methods (Getters/Setters): 
+* SetPassage(Script: string)
+
+
+Methods: 
+* Load(filename: string)
+- - 
+
+* DisplayReferences()
+- - After Loading File and parsing contents into array passages
+- - This will display a numbered list of the References (Calls the Reference Class in a Conditional Loop based on if a verse has a end vers or if that is null)
+
+
+* SplitPassage()
+- - Takes the passage and splits it into individual words separated by " " (spaces). This will tag any punctuation to the word before it. This will be left visible when words are hidden as the Hide method in word will only hide letters. 
+
+* HideWords()
+- - This generates a random number between 1,5 or can be prompted to set the high end. Then hides between 1 and 5 or 1 and the high end words each round. 
+
+* CompletelyHidden()
+- - Checks if the scripture passage is completely hidden by checking iff any of the words in the scripture value for _isHidden is false. If even 1 word is "not hidden" then it will return false. 
+
+* GetScriptureText()
+- - Start with a blank text then cycle through each word in scripture and combine it together with " " (space) between. Then return the new text.
+
+* Dispaly()
+- - Clears the display and then writes the reference and the scripture as it is currently stored (meaning hidden words as written as ____) this will start with all words visible and then go until all words are hidden. All this method does is display it. 
+
