@@ -2,28 +2,21 @@ using System;
 
 public class Word
 {
-  //Member Variables
   private string _word;
+
   private bool _isHidden;
 
-  //Constructors
-  public Word (string word)
+  
+
+  public Word(string word)
   {
     _word = word;
     _isHidden = false;
-  }
-  //Methods (Getters and Setters)
-  public bool GetIsHidden()
-  {
-    return _isHidden;
-  }
-  public string GetWord()
-  {
-    return _word;
+
   }
 
-  //Methods
-  public void Hide() //This takes a word and devides it to its characters, then if being hidden, replaces all a-z characters with and _ so that the word appears as ___ underscores in the text.
+
+  public void Hide()
   {
     char[] characters = _word.ToCharArray();
 
@@ -35,8 +28,17 @@ public class Word
       }
     }
     _word = new string(characters);
-    _isHidden = true; 
+    _isHidden = true;
+
   }
 
+  public bool GetIsHidden()
+  {
+    return _isHidden;
+  }
+    public string GetWord()
+  {
+    return _word;
+  }
 
 }
