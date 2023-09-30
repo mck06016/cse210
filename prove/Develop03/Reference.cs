@@ -9,6 +9,7 @@ public class Reference
 
   private string _verse;
 
+
   public string getBook()
   {
     return _bookName;
@@ -43,6 +44,12 @@ public class Reference
     return _verse;
   }
 
+  public string setVerse2(string Verse1, string Verse2)
+  {
+    _verse = $"{Verse1}-{Verse2}";
+    return _verse;
+  }
+
 
   public Reference()
   {
@@ -67,6 +74,13 @@ public class Reference
   public string GetReferenceToString()
   {
     return $"{_bookName} {_chapter}:{_verse}";
+  }
+
+  public void Display()
+  {
+    Console.Clear();
+    string reference = GetReferenceToString();
+    Console.Write($"{reference} - ");
   }
 
 }

@@ -2,21 +2,34 @@ using System.IO;
 
 public class Scripture
 {
-
+  //Member Variables (Primary)
+  /*Testing two scriptures
   Reference myReference = new Reference("Joseph Smith - History","1","16","17");
- 
-  public string passage = "I saw a pillar of light exactly over my head, above the brightness of the sun, which descended gradually until it fell upon me. When the light rested upon me I saw two Personages, whose brightness and glory defy all description, standing above me in the air. One of them spake unto me, calling me by name and said, pointing to the other— This is My Beloved Son. Hear Him!";
 
+  public string passage = "I saw a pillar of light exactly over my head, above the brightness of the sun, which descended gradually until it fell upon me. When the light rested upon me I saw two Personages, whose brightness and glory defy all description, standing above me in the air. One of them spake unto me, calling me by name and said, pointing to the other— This is My Beloved Son. Hear Him!";
+  */
+
+  public string passage;
+
+  //Member Variables (Secondary)
   private List<Word> scripture = new List<Word>();
 
   public string[] wordList;
 
+  //Constructor
   public Scripture()
   {
-    SplitPassage();
-
+    
   }
 
+  //Methods (Getters and Setters);
+  public string setPassage(string Script){
+    passage = Script;
+    return passage;
+  }
+
+
+  //Methods
   public void SplitPassage() 
   {
     wordList = passage.Split(" ");
@@ -74,54 +87,7 @@ public class Scripture
 
   public void Display ()
   {
-    Console.Clear();
-
-    Console.WriteLine($"{myReference.GetReferenceToString()} - {GetScriptureText()}");
-
+    Console.WriteLine($"{GetScriptureText()}");
   }
-
-  public string setPassage(string Script){
-    passage = Script;
-    return passage;
-  }
-
-/*public void GetScripture(){  //This is an attempt to pull it from a csv file.
-      
-  string filePath = "dc_mastery.csv";
-  StreamReader reader = null;
-  if (File.Exists(filePath)){
-    reader = new StreamReader(File.OpenRead(filePath));
-    List<string> listA = new List<string>();
-    Scripture newScripture = new Scripture();
-    while (!reader.EndOfStream){
-      var line = reader.ReadLine();
-      var values = line.Split(',');
-      int i;
-      for (i=0; i < values.Length; i++){
-      if (i==0){
-          string book = values[i];
-          myReference.setBook(book);
-      }
-      else if (i == 1){
-          string chapter = values[i];
-          myReference.setChapter(chapter);
-      }
-      else if (i == 2){
-          string verse1 = values[i];
-          myReference.setVerse1(verse1);
-      }
-      else if (i == 3){
-          string verse2 = values[i];
-          myReference.setVerse2(verse2);
-      }
-      else if (i == 4){
-          string script = values[i];
-          passage = script;   
-      }
-      }
-    }} 
-  else {
-    Console.WriteLine("File doesn't exist");
-}}*/
 
 }
