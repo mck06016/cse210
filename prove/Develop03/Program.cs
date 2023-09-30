@@ -7,6 +7,18 @@ class Program
         Scripture myScripture = new Scripture();
         Reference myReference = new Reference();
 
+        //If not using Selection of Scripture Block below - include this block:
+        /*
+
+        myScripture.setPassage("I saw a pillar of light exactly over my head, above the brightness of the sun, which descended gradually until it fell upon me. When the light rested upon me I saw two Personages, whose brightness and glory defy all description, standing above me in the air. One of them spake unto me, calling me by name and said, pointing to the other— This is My Beloved Son. Hear Him!");
+        myReference.setBook("Joseph Smith - History");
+        myReference.setChapter("1");
+        myReference.SetVerse2("16","17")'
+        
+        */
+
+        //Beginning of Selection of Scripture
+
         Console.WriteLine("Please choose from the following 3 scriptures: ");
         Console.WriteLine("Scripture 1: 2 Nephi 25:26 - And we talk of Christ, we rejoice in Christ, we preach of Christ, we prophesy of Christ, and we write according to our prophecies, that our children may know to what source they may look for a remission of their sins.");
         Console.WriteLine();
@@ -46,8 +58,9 @@ class Program
             Environment.Exit(0);
         }
 
+        //End of Selection of Scripture
 
-        
+        //Memorization Section 
         myScripture.SplitPassage();
         myReference.Display();
         myScripture.Display();
@@ -59,7 +72,6 @@ class Program
             myScripture.HideWords();
             myReference.Display();
             myScripture.Display();
-
         }
     }
 }
