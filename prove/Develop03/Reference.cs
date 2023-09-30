@@ -4,9 +4,7 @@ public class Reference
 {
 //Member Variables
   private string _bookName; 
-
   private string _chapter; 
-
   private string _verse;
 
 //Constructor
@@ -17,25 +15,25 @@ public class Reference
 
 //Methods (Getters and Setters)
 //Sets Book.
-  public string setBook(string Book)
+  public string SetBook(string Book)
   {
     _bookName = Book;
     return _bookName;
   }
 //Sets Chapter.
-  public string setChapter(string Chapter)
+  public string SetChapter(string Chapter)
   {
     _chapter = Chapter;
     return _chapter;
   }
 //Sets Verse if there is 1 Verse.
-  public string setVerse1(string Verse1)
+  public string SetVerse1(string Verse1)
   {
     _verse = Verse1;
     return _verse;
   }
 //Sets Verses if there is 2 Verses.
-  public string setVerse2(string Verse1, string Verse2)
+  public string SetVerse2(string Verse1, string Verse2)
   {
     _verse = $"{Verse1}-{Verse2}";
     return _verse;

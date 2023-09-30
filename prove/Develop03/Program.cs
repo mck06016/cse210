@@ -10,9 +10,9 @@ class Program
         //If not using Selection of Scripture Block below - include this block:
         /*
 
-        myScripture.setPassage("I saw a pillar of light exactly over my head, above the brightness of the sun, which descended gradually until it fell upon me. When the light rested upon me I saw two Personages, whose brightness and glory defy all description, standing above me in the air. One of them spake unto me, calling me by name and said, pointing to the other— This is My Beloved Son. Hear Him!");
-        myReference.setBook("Joseph Smith - History");
-        myReference.setChapter("1");
+        myScripture.SetPassage("I saw a pillar of light exactly over my head, above the brightness of the sun, which descended gradually until it fell upon me. When the light rested upon me I saw two Personages, whose brightness and glory defy all description, standing above me in the air. One of them spake unto me, calling me by name and said, pointing to the other— This is My Beloved Son. Hear Him!");
+        myReference.SetBook("Joseph Smith - History");
+        myReference.SetChapter("1");
         myReference.SetVerse2("16","17")'
         
         */
@@ -34,24 +34,24 @@ class Program
 
         if (choice ==1)
         {
-            myScripture.setPassage("And we talk of Christ, we rejoice in Christ, we preach of Christ, we prophesy of Christ, and we write according to our prophecies, that our children may know to what source they may look for a remission of their sins.");
-            myReference.setBook("2 Nephi");
-            myReference.setChapter("25");
-            myReference.setVerse1("26");
+            myScripture.SetPassage("And we talk of Christ, we rejoice in Christ, we preach of Christ, we prophesy of Christ, and we write according to our prophecies, that our children may know to what source they may look for a remission of their sins.");
+            myReference.SetBook("2 Nephi");
+            myReference.SetChapter("25");
+            myReference.SetVerse1("26");
         }
         else if (choice ==2)
         {
-            myScripture.setPassage("Behold, I am Jesus Christ. I created the heavens and the earth and all things that in them are. I was with the Father from the beginning.");
-            myReference.setBook("3 Nephi");
-            myReference.setChapter("9");
-            myReference.setVerse1("15");
+            myScripture.SetPassage("Behold, I am Jesus Christ. I created the heavens and the earth and all things that in them are. I was with the Father from the beginning.");
+            myReference.SetBook("3 Nephi");
+            myReference.SetChapter("9");
+            myReference.SetVerse1("15");
         }
         else if (choice == 3)
         {
-            myScripture.setPassage("A new commandment I give unto you- that you love one another as I have loved you- that ye also love one another. By this shall all men know that ye are my disciples.");
-            myReference.setBook("John");
-            myReference.setChapter("14");
-            myReference.setVerse2("34", "35");
+            myScripture.SetPassage("A new commandment I give unto you- that you love one another as I have loved you- that ye also love one another. By this shall all men know that ye are my disciples.");
+            myReference.SetBook("John");
+            myReference.SetChapter("14");
+            myReference.SetVerse2("34", "35");
         }
         else{
             Console.WriteLine("That is not a valid choice. The program will now exit.");

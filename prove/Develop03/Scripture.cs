@@ -2,13 +2,11 @@ using System.IO;
 
 public class Scripture
 {
-  //Member Variables (Primary)
-    public string passage;
+  //Member Variables 
+  private string _passage;
+  private List<Word> _scripture = new List<Word>();
 
-  //Member Variables (Secondary)
-  private List<Word> scripture = new List<Word>();
-
-  public string[] wordList;
+  private string[] _wordList;
 
   //Constructor
   public Scripture()
@@ -18,20 +16,20 @@ public class Scripture
 
   //Methods (Getters and Setters);
   //Sets the Passage - Used in Program
-  public string setPassage(string Script){
-    passage = Script;
-    return passage;
+  public string SetPassage(string Script){
+    _passage = Script;
+    return _passage;
   }
 
   //Methods
   //Splits the long string of the passage into a list of individual words.
   public void SplitPassage() 
   {
-    wordList = passage.Split(" ");
-    foreach (string word in wordList)
+    _wordList = _passage.Split(" ");
+    foreach (string word in _wordList)
     {
       Word text = new Word(word);     
-      scripture.Add(text);
+      _scripture.Add(text);
     }
   }
   
@@ -45,11 +43,11 @@ public class Scripture
     while (i<randomCount && !(CompletelyHidden()))  
     {
       Random random = new Random();
-      int randomNum = random.Next(scripture.Count);
+      int randomNum = random.Next(_scripture.Count);
       
-      if (!(scripture[randomNum].GetIsHidden()))
+      if (!(_scripture[randomNum].GetIsHidden()))
       {
-        scripture[randomNum].Hide();
+        _scripture[randomNum].Hide();
         i++;
       } 
     }
@@ -58,13 +56,12 @@ public class Scripture
 //This tests if every word of the Scripture is hidden. If it is Completely Hidden the program can stop. 
   public bool CompletelyHidden()   
   {
-    foreach (Word word in scripture)
+    foreach (Word word in _scripture)
     {
       if (!(word.GetIsHidden())) 
       {
         return false;    
       }
-    
     }
     return true;  
   }
@@ -73,7 +70,7 @@ public class Scripture
   public string GetScriptureText()
   {
     string text = "";
-    foreach (Word word in scripture)
+    foreach (Word word in _scripture)
     {
       text = text + " " + word.GetWord();
     }

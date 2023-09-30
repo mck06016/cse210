@@ -4,10 +4,8 @@ public class Word
 {
 //Member Variables
   private string _word;
-
   private bool _isHidden;
 
-  
 //Constructor
   public Word(string word)
   {
