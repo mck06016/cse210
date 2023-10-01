@@ -1,0 +1,79 @@
+Class: Activity
+  //Member Variables
+  _name: string
+  _description: string
+  _duration: int
+
+  //Constructors
+  Activity()
+
+
+  //Methods (Getters & Setters)
+
+
+
+  //Methods 
+  DisplayStartingMessage(): void
+  DisplayEndingMessage(): void
+  ShowSpinner(seconds: int): void
+  ShowCountDown(seconds: int): void
+
+Class: BreathingActivity:Activity
+  //Member Variables
+
+
+
+  //Constructors
+  BreathingActivity()
+
+
+  //Methods (Getters & Setters)
+
+
+
+  //Methods 
+  Run(): void
+
+
+Class: RelfectionActivity:Activity
+  //Member Variables
+  _prompts: List<string>
+  _questions: List<string>
+
+
+  //Constructors
+  RelfectionActivity()
+
+
+  //Methods (Getters & Setters)
+
+
+
+  //Methods 
+  Run(): void
+  GetRandomPrompt(): string
+  GetRandomQuestion(): string
+  DisplayPrompt(): void
+  DisplayQuestions(): void
+
+
+
+Class: Listing Activity
+  //Member Variables
+  _count: int
+  _prompts: List<string>
+
+
+  //Constructors
+  ListingActivity()
+
+
+  //Methods (Getters & Setters)
+
+
+
+  //Methods 
+  Run(): void
+  GetRandomPrompt(): void
+  GetRandomQuestion(): List<string>
+

@@ -6,6 +6,9 @@ class Program
     {
 
         Console.WriteLine("Hello Learning04 World!");
+        Activity newActivity = new Activity();
+
+        newActivity.ShowAnnimate(5);
         
     }
 }
