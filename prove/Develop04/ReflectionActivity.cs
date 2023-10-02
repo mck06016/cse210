@@ -59,21 +59,20 @@ public class ReflectionActivity : Activity
 
   public string GetRandomPrompt() //Reused the Prompt.cs code from the Journal Program and cleaned it up.
   {
-    string prompt ="";
-  
+    string prompt = "";
+
     Random rand = new Random();
-    int num = rand.Next(0, _prompts.Count);
+    int num;
+
+    do
+    {
+      num = rand.Next(0, _prompts.Count);
+    } while (usedPrompts.Contains(num));
 
     if (usedPrompts.Count() < _prompts.Count())
     {
-      if (!usedPrompts.Contains(num))
-      {
-        usedPrompts.Add(num);
-        prompt = _prompts[num];
-      }
-      else{
-        GetRandomPrompt();
-      }
+      usedPrompts.Add(num);
+      prompt = _prompts[num];
     }
     else
     {
@@ -82,34 +81,32 @@ public class ReflectionActivity : Activity
     return prompt;
   }
 
-  public string GetRandomQuestion() 
+  public string GetRandomQuestion()
   {
-    string question ="";
-
+    string question = "";
+    int num;
     Random rand = new Random();
-    int num = rand.Next(0, _questions.Count);
 
-// No Consideration for Duplicates
-    question = _questions[num];
+    // No Consideration for Duplicates
+    //question = _questions[num];
 
-
-/*  // Code is supposed to stop duplicate questions but sometimes I don't get a question.
-    if (usedQuestions.Count() < _questions.Count())
+    // Code is supposed to stop duplicate questions but sometimes I don't get a question.
+    do
     {
-      if (!usedQuestions.Contains(num))
-      {
-        usedQuestions.Add(num);
-        question = _questions[num];
-      }
-      else{
-        GetRandomQuestion();
-      }
+      num = rand.Next(0, _questions.Count);
+    } while (usedQuestions.Contains(num) && usedQuestions.Count < _questions.Count);
+
+
+    if (usedQuestions.Count < _questions.Count)
+    {
+      usedQuestions.Add(num);
+      question = _questions[num];
     }
     else
     {
-      Console.WriteLine("There are no more questions for today!");
+      return "X";
     }
-  */  
+
     return question;
   }
 
@@ -117,7 +114,7 @@ public class ReflectionActivity : Activity
   {
     Console.WriteLine(GetRandomPrompt());
     Console.Write("Press any key when you are ready to proceed. ");
-    Console.ReadLine(); 
+    Console.ReadLine();
   }
 
   public void DisplayQuestions()
@@ -129,8 +126,19 @@ public class ReflectionActivity : Activity
 
     while (stopwatch.Elapsed < TimeSpan.FromSeconds(time))
     {
-      Console.WriteLine(GetRandomQuestion());
-      Pause(5); //Short Time used for Testing
+      string question = GetRandomQuestion();
+      if (question == "X")
+      {
+        Console.WriteLine("There are no more questions for today!");
+        break;
+      }
+      else
+      {
+        Console.Write($"{question} ");
+        Spinner(10);  // Time to ponder each questionn - I found 5 seconds too short and 15 seconds too long.
+      }
+
+      //Pause(5); 
       Console.WriteLine();
     }
   }

@@ -71,23 +71,22 @@ public class Activity
       Console.WriteLine();
       Console.WriteLine("Get Ready ...");
       CountDown(1); //Short Time used for Testing
-      Console.Clear();  
+      Console.Clear();
       Console.WriteLine("Let's begin ... ");
       Console.Write("Press any key to initiate the activity. ");
-      Console.ReadLine();    
+      Console.ReadLine();
     }
   }
 
   public void DisplayEndingMessage()
   {
-    Console.Clear();
     Console.WriteLine($"Well Done !");
     Console.WriteLine();
     Console.WriteLine($"You have completed {_duration} seconds of the {_name} activity.");
     Pause(5);
   }
 
-  public void Pause (int Seconds) //Working in standalone test
+  public void Pause(int Seconds) //Working in standalone test
   {
     var stopwatch = new Stopwatch();
     stopwatch.Start();
@@ -101,12 +100,12 @@ public class Activity
     }
   }
 
-  public void Spinner (int Seconds)
+  public void Spinner(int Seconds)
   {
     var stopwatch = new Stopwatch();
     stopwatch.Start();
 
-    while(stopwatch.Elapsed < TimeSpan.FromSeconds(Seconds))
+    while (stopwatch.Elapsed < TimeSpan.FromSeconds(Seconds))
     {
       Console.Write("-");
       Thread.Sleep(250);
@@ -120,11 +119,10 @@ public class Activity
       Console.Write("/");
       Thread.Sleep(250);
       Console.Write("\b \b");
-      
     }
   }
 
-  public void CountDown (int Seconds) //Working in standalone test
+  public void CountDown(int Seconds) //Working in standalone test
   {
     int x = Seconds;
 
@@ -136,7 +134,7 @@ public class Activity
     }
   }
 
-  public void CountUp (int Seconds)
+  public void CountUp(int Seconds)
   {
     int x = 1;
 
@@ -146,5 +144,5 @@ public class Activity
       Thread.Sleep(1000);
       x++;
     }
-  }  
+  }
 }
