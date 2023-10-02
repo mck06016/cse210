@@ -12,19 +12,34 @@ public class ReflectionActivity : Activity
 
 
   //Member Variables
-  private List<string> _prompts = new List<string>();
-  private List<string> _questions  = new List<string>();
+  private List<string> _prompts = new List<string>()
+  {
+    "Think of a time when you stood up for someone else. ",
+    "Think of a time when you did something really difficult. ",
+    "Think of a time when you helped someone in need. ",
+    "Think of a time when you did something truly selfless.",
+    "Think of a time when you felt the spirit. ",
+    "Think of a time when you felt loved. ",
+    "Think of a time when you wanted something for the benefit of someone else. ",
+  };
+  private List<string> _questions = new List<string>()
+  {
+    "Why was this experience meaningful to you?",
+    "Have you ever done anything like this before?",
+    "How did you get started?",
+    "How did you feel when it was complete?",
+    "What made this time different than other times when you were not as successful?",
+    "What is your favorite thing about this experience?",
+    "What could you learn from this experience that applies to other situations?",
+    "What did you learn about yourself through this experience?",
+    "How can you keep this experience in mind in the future?",
+  };
 
   List<int> usedPrompts = new List<int>();
   List<int> usedQuestions = new List<int>();
 
 
   //Constructors
-  public ReflectionActivity ()
-  {
-
-  }
-
   public ReflectionActivity(string activityName, string activityDescription) : base(activityName, activityDescription)
   {
 
@@ -42,26 +57,17 @@ public class ReflectionActivity : Activity
     DisplayQuestions();
   }
 
-  public string GetRandomPrompt() //Reused the Prompt.cs code from the Journal Program
+  public string GetRandomPrompt() //Reused the Prompt.cs code from the Journal Program and cleaned it up.
   {
     string prompt ="";
-    _prompts.Add("Think of a time when you stood up for someone else. ");
-    _prompts.Add("Think of a time when you did something really difficult. ");
-    _prompts.Add("Think of a time when you helped someone in need. ");
-    _prompts.Add("Think of a time when you did something truly selfless.");
-    _prompts.Add("Think of a time when you felt the spirit. ");
-    _prompts.Add("Think of a time when you felt loved. ");
-    _prompts.Add("Think of a time when you wanted something for the benefit of someone else. ");
-
-    //int lengthPrompts = prompts.Count;
+  
     Random rand = new Random();
     int num = rand.Next(0, _prompts.Count);
 
-    if (usedPrompts.Count() < _prompts.Count())  //I can manually enter 50 or the number of prompts I have.
+    if (usedPrompts.Count() < _prompts.Count())
     {
       if (!usedPrompts.Contains(num))
       {
-        //Console.WriteLine($"{num +1}.{prompts[num]}");
         usedPrompts.Add(num);
         prompt = _prompts[num];
       }
@@ -73,32 +79,25 @@ public class ReflectionActivity : Activity
     {
       Console.WriteLine("There are no more prompts for today!");
     }
-
     return prompt;
   }
 
   public string GetRandomQuestion() 
   {
     string question ="";
-    _questions.Add("Why was this experience meaningful to you?");
-    _questions.Add("Have you ever done anything like this before?");
-    _questions.Add("How did you get started?");
-    _questions.Add("How did you feel when it was complete?");
-    _questions.Add("What made this time different than other times when you were not as successful?");
-    _questions.Add("What is your favorite thing about this experience?");
-    _questions.Add("What could you learn from this experience that applies to other situations?");
-    _questions.Add("What did you learn about yourself through this experience?");
-    _questions.Add("How can you keep this experience in mind in the future?");
 
-    //int lengthPrompts = prompts.Count;
     Random rand = new Random();
     int num = rand.Next(0, _questions.Count);
 
-    if (usedQuestions.Count() < _questions.Count())  //I can manually enter 50 or the number of prompts I have.
+// No Consideration for Duplicates
+    question = _questions[num];
+
+
+/*  // Code is supposed to stop duplicate questions but sometimes I don't get a question.
+    if (usedQuestions.Count() < _questions.Count())
     {
       if (!usedQuestions.Contains(num))
       {
-        //Console.WriteLine($"{num +1}.{prompts[num]}");
         usedQuestions.Add(num);
         question = _questions[num];
       }
@@ -110,10 +109,8 @@ public class ReflectionActivity : Activity
     {
       Console.WriteLine("There are no more questions for today!");
     }
-
+  */  
     return question;
-
-    
   }
 
   public void DisplayPrompt()
@@ -128,13 +125,13 @@ public class ReflectionActivity : Activity
     int time = GetDuration();
 
     var stopwatch = new Stopwatch();
-
     stopwatch.Start();
 
     while (stopwatch.Elapsed < TimeSpan.FromSeconds(time))
     {
-      GetRandomQuestion();
-      Pause(5);
+      Console.WriteLine(GetRandomQuestion());
+      Pause(5); //Short Time used for Testing
+      Console.WriteLine();
     }
   }
 

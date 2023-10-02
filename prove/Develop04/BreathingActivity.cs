@@ -51,15 +51,18 @@ public class BreathingActivity:Activity
 
     while (stopwatch.Elapsed < TimeSpan.FromSeconds(time))
     {
-      
       Console.WriteLine(breathIn);
       CountDown(breathInDuration);
+      Console.Clear();
       Console.WriteLine(breathHold);
       CountDown(holdBreath);
+      Console.Clear();
       Console.WriteLine(breathOut);
       CountDown(breathOutDuration);
+      Console.Clear();
       Console.WriteLine(breathHold);
       CountDown(holdBreath);
+      Console.Clear();
     }
   }
 
@@ -85,10 +88,10 @@ public class BreathingActivity:Activity
     { 
       Console.WriteLine(breathIn);
       CountDown(breathInDuration);
+      Console.Clear();
       Console.WriteLine(breathOut);
       CountDown(breathOutDuration);
+      Console.Clear();
     }
   }
-
-
 }

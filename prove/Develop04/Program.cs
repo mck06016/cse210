@@ -39,7 +39,28 @@ class Program
 
                     relax1.DisplayStartingMessage();
 
-                    relax1.Run();
+                    Console.WriteLine("1. Would you like to try Box Breathing? ");
+                    Console.WriteLine("2. Or Would you like to do a Standard Relaxation Breathing Exercise.");
+                    Console.Write("Select a choice from the menu: ");
+                    string option = Console.ReadLine();
+                    switch (option)
+                    {
+                        case "1":
+                            relax1.BoxBreathing();
+                            break;
+                        
+                        case "2":
+                            relax1.Run();
+                            break;
+
+                        default:
+                            Console.Clear();
+                            Console.WriteLine("Not a Valid Selection. Please try again.");
+                            Activity temp = new Activity();
+                            temp.Spinner(5);
+                            break;
+                    }
+
 
                     relax1.DisplayEndingMessage();
 

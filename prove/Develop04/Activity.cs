@@ -54,7 +54,7 @@ public class Activity
     Pause(1);
     Console.WriteLine();
     Console.WriteLine($"{_descritpion}");
-    Pause(10);
+    Pause(1); //Short Time used for Testing
     Console.WriteLine();
     Console.Write($"How long would you like for this {_name} session (in seconds): ");
     string entry = Console.ReadLine();
@@ -70,7 +70,7 @@ public class Activity
       Console.WriteLine($"The {_name} will begin in 5 seconds, and will run for {_duration} seconds.");
       Console.WriteLine();
       Console.WriteLine("Get Ready ...");
-      CountDown(5);
+      CountDown(1); //Short Time used for Testing
       Console.Clear();  
       Console.WriteLine("Let's begin ... ");
       Console.Write("Press any key to initiate the activity. ");
