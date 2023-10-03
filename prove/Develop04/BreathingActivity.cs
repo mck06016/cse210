@@ -6,13 +6,8 @@ public class BreathingActivity : Activity
 
   /*
    Name = "Breathing Activity"
-
    Description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing."
-
-
   */
-
-
   //Member Variables
 
 

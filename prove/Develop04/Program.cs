@@ -108,7 +108,7 @@ class Program
 
                     break;
 
-                //Invalud Entry (not 1-4)
+                //Invalud Entry (not 1-4) // Error in the code - - if enter or another key is hit .. even when there is no active ReadLine - the computer stores that and enters it on the next menu and returns this value. ...
                 default:
                     Console.Clear();
                     Console.WriteLine("Not a Valid Selection. Please try again.");
