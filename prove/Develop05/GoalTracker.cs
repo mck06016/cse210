@@ -125,7 +125,7 @@ public class GoalTracker
 
   }
 
-  public void CreateGoal(string goalType, string name, string description, int points, int target = 0, int bonus = 0, bool isComplete = false)
+  public void CreateGoal(string goalType, string name, string description, int points, int target = 0, int bonus = 0, bool isComplete = false, int amountCompleted = 0)
   {
     Goal newGoal;
 
@@ -138,7 +138,7 @@ public class GoalTracker
         newGoal = new EternalGoal(name, description, points);
         break;
       case "ChecklistGoal":
-        newGoal = new ChecklistGoal(name, description, points, target, bonus);
+        newGoal = new ChecklistGoal(name, description, points, target, bonus, amountCompleted);
         break;
       default:
         Console.WriteLine("Invalid goal type.");
@@ -193,9 +193,10 @@ public class GoalTracker
             string description = parts[2];
             int points = int.Parse(parts[3]);
 
-            int target = 0;
+            int target = 0; //Issue somewhere in here - - the target and amount completed is not being saved. 
             int bonus = 0;
             bool isComplete = false;
+            int amountCompleted = 0;
 
             if (parts.Length > 4)
             {
@@ -209,13 +210,21 @@ public class GoalTracker
                   break;
               }
             }
-            if (parts.Length > 5)
+            else if (parts.Length > 5)
             {
               bonus = int.Parse(parts[5]);
+              amountCompleted = int.Parse(parts[6]);
+            }
+            else
+            {
+              target = 0;
+              bonus = 0;
+              isComplete = false;
+              amountCompleted = 0;
             }
 
 
-            CreateGoal(goalType, name, description, points, target, bonus, isComplete);
+            CreateGoal(goalType, name, description, points, target, bonus, isComplete, amountCompleted);
           }
         }
       }

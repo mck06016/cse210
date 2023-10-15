@@ -39,7 +39,7 @@ public class ChecklistGoal : Goal
   }
 
   // Constructors
-  public ChecklistGoal(string name, string description, int points, int target, int bonus) : base(name, description, points)
+  public ChecklistGoal(string name, string description, int points, int target, int bonus, int amountCompleted = 0) : base(name, description, points)
   {
     _target = target;
     _bonus = bonus;
@@ -84,7 +84,7 @@ public class ChecklistGoal : Goal
   }
   public override string GetStringRepresentation()
   {
-    return $"ChecklistGoal,{_name},{_description},{_points},{_target},{_bonus}";
+    return $"ChecklistGoal,{_name},{_description},{_points},{_target},{_bonus},{_amountCompleted}";
   }
 
 
