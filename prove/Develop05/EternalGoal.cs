@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 
 public class EternalGoal : Goal
 {
@@ -8,19 +9,40 @@ public class EternalGoal : Goal
   */
 
   // Member Variables
-  // No Member Variables
+  private int _count;
 
   // Getters & Setters
-  // No Getters/Setters
-
+  public void SetCount(int count)
+  {
+    _count = count;
+  }
+  public int GetCount()
+  {
+    return _count;
+  }
   // Constructors
   public EternalGoal(string name, string description, int points) : base(name, description, points)
   {
-
+    _count = 0;
   }
 
   // Methods
-
-
+  public override bool Status()
+  {
+    return base.Status();
+  }
+  public override int RecordEvent()
+  {
+    _count += 1;
+    return _points;
+  }
+  public override string GetDetailString()
+  {
+    return $"{_name} - {_description} - Completed {_count} times.";
+  }
+  public override string GetStringRepresentation()
+  {
+    return $"EternalGoal,{_name},{_description},{_points}";
+  }
 
 }

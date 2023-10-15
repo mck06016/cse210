@@ -21,11 +21,11 @@ public class ChecklistGoal : Goal
   {
     return _target;
   }
-  public void SetAmmountCompleted(int completed)
+  public void SetAmountCompleted(int completed)
   {
     _amountCompleted = completed;
   }
-  public int GetAmmountCompleted()
+  public int GetAmountCompleted()
   {
     return _amountCompleted;
   }
@@ -43,11 +43,49 @@ public class ChecklistGoal : Goal
   {
     _target = target;
     _bonus = bonus;
+    _amountCompleted = 0;
   }
 
 
   // Methods
+  public override int RecordEvent()
+  {
+    if (_amountCompleted < _target)
+    {
+      _amountCompleted++;
+      return _points;
+    }
+    else if (_amountCompleted == _target)
+    {
+      return _bonus;
+    }
+    else
+    {
+      return 0;
+    }
 
+  }
+  public override bool Status()
+  {
+    bool complete;
+    if (_amountCompleted >= _target)
+    {
+      complete = true;
+    }
+    else
+    {
+      complete = false;
+    }
+    return complete;
+  }
+  public override string GetDetailString()
+  {
+    return $"{_name} - {_description} - Completed {_amountCompleted}/{_target} times.";
+  }
+  public override string GetStringRepresentation()
+  {
+    return $"ChecklistGoal,{_name},{_description},{_points},{_target},{_bonus}";
+  }
 
 
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Dynamic;
 
 public class Goal
 {
@@ -6,9 +7,9 @@ public class Goal
 
 
   // Member Variables
-  private string _name;
-  private string _descritpion;
-  private int _points;
+  protected string _name;
+  protected string _description;
+  protected int _points;
 
   // Getters & Setters
   public void SetName(string name)
@@ -21,11 +22,11 @@ public class Goal
   }
   public void SetDescription(string description)
   {
-    _descritpion = description;
+    _description = description;
   }
   public string GetDescription()
   {
-    return _descritpion;
+    return _description;
   }
   public void SetPoints(int points)
   {
@@ -36,24 +37,42 @@ public class Goal
     return _points;
   }
 
-
   // Constructors
   public Goal(string name, string description, int points)
   {
     _name = name;
-    _descritpion = description;
+    _description = description;
     _points = points;
 
   }
 
   // Methods
-  public virtual void RecordEvent()
+  public virtual int RecordEvent()
   {
-
+    return 0; // Specific to each type of Goal
   }
   public virtual bool IsComplete()
   {
+    // Specific to each type of Goal
+    return false; // Default value is not completed.
+  }
+  public virtual bool Status()
+  {
     return false;
+  }
+  public virtual string GetNameString()
+  {
+    return $"{_name}";
+  }
+  public virtual string GetDetailString()
+  {
+    return $"{_name} - {_description}";
+  }
+
+  public virtual string GetStringRepresentation()
+  {
+    // Specific to each Goal type
+    return string.Empty;
   }
 
 

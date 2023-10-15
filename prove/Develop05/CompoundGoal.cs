@@ -8,13 +8,18 @@ public class CompoundGoal : Goal
   */
 
   // Member Variables
-
+  List<SimpleGoal> _compound;
+  private int _parts;
 
   // Getters & Setters
+  public void SetParts(int parts)
+  {
+    _parts = parts;
+  }
 
 
   // Constructors
-  public CompoundGoal(string name, string description, int points) : base(name, description, points)
+  public CompoundGoal(string name, string description, int points, List<SimpleGoal> compound, int parts) : base(name, description, points)
   {
 
   }

@@ -1,0 +1,5 @@
+EternalGoal,Scripture Study,Read 15 minutes of Scriptures every day. Quantity is less important then quality. ,10
+EternalGoal,Mindfullness Minutes,Spend 5 minutes every day practicing mindfullness. Breathing or Meditation Exercise. ,5
+SimpleGoal,Complete Eternal Quest Program,Finish Coding Eternal Quest CS Program for CSE 210.,50,False
+ChecklistGoal,Attend the Temple,Attend 2 temple ordinances each month for one year.,25,0,0
+SimpleGoal,Complete Web Development Certificate,Complete WDD230 and CSE210 to complete the Pathway Worldwide certificate "Web Development".,1000,False
