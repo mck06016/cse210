@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         GoalTracker goalTracker = new GoalTracker();
-        Console.Write("Who will be particpating in the Eternal Quest Today - Please enter your name: ");
+        Console.Write("Who will be particpating in the Eternal Quest Today -This will be the file name that your goals are recorded under - Please enter your name: ");
         string name = Console.ReadLine();
         goalTracker.SetName(name);
 
