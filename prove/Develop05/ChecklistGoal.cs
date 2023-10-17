@@ -82,7 +82,7 @@ public class ChecklistGoal : Goal
   }
   public override string GetDetailString()
   {
-    return $"{_name} - {_description} - Completed {_amountCompleted}/{_target} times. When Complete {_bonus} bonus.";
+    return $"{_name} - {_description} - Completed {_amountCompleted}/{_target} times for {_points} points each time. When Complete {_bonus} points bonus.";
   }
   public override string GetStringRepresentation()
   {

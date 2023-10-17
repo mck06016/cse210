@@ -1,8 +1,0 @@
-3675
-EternalGoal,Scripture Study,Read 15 minutes of Scriptures every day. Quantity is less important then quality.,10,False,2
-EternalGoal,Mindfulness Minutes,Spend 5 minutes every day practicing mindfulness. Breathing or Meditation Exercise.,5,False,7
-SimpleGoal,Complete Eternal Quest Program,Finish Coding and Debugging Eternal Quest Program for CSE210.,5000,True
-ChecklistGoal,Attend the Temple,Attend two temple ordinances each month for one year.,25,False,3,12,500
-SimpleGoal,Complete the Web Development Certificate,Complete WDD230 and CSE210 to complete the Pathway Worldwide certificate "Web Development and Computer Programing".,1000,True
-SimpleGoal,Choose Final Project,Determine if you are going to complete the Foundation 4 or the Design your own project.,50,False
-ChecklistGoal,Attend Presidency Meeting,Weekly Presidency Meeting record for the year.,50,False,0,50,500

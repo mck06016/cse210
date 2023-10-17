@@ -38,7 +38,7 @@ public class EternalGoal : Goal
   }
   public override string GetDetailString()
   {
-    return $"{_name} - {_description} - Completed {_count} times.";
+    return $"{_name} - {_description} - Completed {_count} times for {_points} points each time.";
   }
   public override string GetStringRepresentation()
   {

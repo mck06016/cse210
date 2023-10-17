@@ -6,7 +6,11 @@ class Program
     static void Main(string[] args)
     {
         GoalTracker goalTracker = new GoalTracker();
-        Console.Write("Who will be particpating in the Eternal Quest Today -This will be the file name that your goals are recorded under - Please enter your name: ");
+
+        //This question will be used to load a previously created Goals File and record. For purpose of testing type "Julia" as this file exists. You can also create your own file for testing. 
+        //There is also a generic "Test" file.
+
+        Console.Write("Who will be particpating in the Eternal Quest Today - This will be the file name that your goals are recorded under - Please enter your name: ");
         string name = Console.ReadLine();
         goalTracker.SetName(name);
 
@@ -58,7 +62,7 @@ class Program
                     if (goalType == "SimpleGoal")
                     {
                         bool isComplete = false;
-                        goalTracker.CreateGoal(goalType, name, description, points, isComplete);
+                        goalTracker.CreateGoal(goalType, goalName, description, points, isComplete);
                     }
                     else if (goalType == "ChecklistGoal")
                     {
@@ -69,7 +73,7 @@ class Program
                         bool isComplete = false;
                         int amountCompleted = 0;
 
-                        goalTracker.CreateGoal(goalType, name, description, points, isComplete, amountCompleted, target, bonus);
+                        goalTracker.CreateGoal(goalType, goalName, description, points, isComplete, amountCompleted, target, bonus);
                     }
                     else
                     {

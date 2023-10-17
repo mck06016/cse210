@@ -1,0 +1,10 @@
+134
+SimpleGoal,Goal 1,Details 1,10,True
+SimpleGoal,Goal 2,Details 2,50,False
+SimpleGoal,Goal 3,Details 3,100,False
+EternalGoal,Goal 4,Details 4,10,False,2
+EternalGoal,Goal 5,Details 5,10,False,2
+EternalGoal,Goal 6,Details 6,10,False,2
+ChecklistGoal,Goal 7,Details 7,10,False,2,10,100
+ChecklistGoal,Goal 8,Details 8,10,False,2,50,500
+ChecklistGoal,Goal 9,Detail 9,12,False,2,12,144

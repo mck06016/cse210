@@ -12,7 +12,7 @@ public class GoalTracker
   // Member Variables
   private List<Goal> _goals;
   private int _score;
-  private string _name;
+  private string _userName;
 
   // Getters & Setters
   public void SetScore(int score)
@@ -25,7 +25,7 @@ public class GoalTracker
   }
   public void SetName(string name)
   {
-    _name = name;
+    _userName = name;
   }
 
 
@@ -45,7 +45,7 @@ public class GoalTracker
   public void DisplayPlayerInfo()
   {
 
-    Console.WriteLine($"{_name} Score: {_score}");
+    Console.WriteLine($"{_userName} Score: {_score}");
   }
 
   public void ListGoalsNames()  //WHY WONT YOU WORK

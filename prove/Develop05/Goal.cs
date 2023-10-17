@@ -66,7 +66,7 @@ public class Goal
   }
   public virtual string GetDetailString()
   {
-    return $"{_name} - {_description}";
+    return $"{_name} - {_description} - For {_points} points.";
   }
 
   public virtual string GetStringRepresentation()
