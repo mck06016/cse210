@@ -11,6 +11,7 @@ public class ChecklistGoal : Goal
   private int _target;
   private int _amountCompleted;
   private int _bonus;
+  private bool _isComplete;
 
   // Getters & Setters
   public void SetTarget(int target)
@@ -39,11 +40,13 @@ public class ChecklistGoal : Goal
   }
 
   // Constructors
-  public ChecklistGoal(string name, string description, int points, int target, int bonus, int amountCompleted = 0) : base(name, description, points)
+  public ChecklistGoal(string name, string description, int points, bool isComplete, int amountCompleted, int target, int bonus) : base(name, description, points)
   {
     _target = target;
     _bonus = bonus;
-    _amountCompleted = 0;
+    _amountCompleted = amountCompleted;
+    _isComplete = isComplete;
+    
   }
 
 
@@ -52,7 +55,7 @@ public class ChecklistGoal : Goal
   {
     if (_amountCompleted < _target)
     {
-      _amountCompleted++;
+      _amountCompleted+=1;
       return _points;
     }
     else if (_amountCompleted == _target)
@@ -67,24 +70,24 @@ public class ChecklistGoal : Goal
   }
   public override bool Status()
   {
-    bool complete;
     if (_amountCompleted >= _target)
     {
-      complete = true;
+      _isComplete = true;
     }
     else
     {
-      complete = false;
+      _isComplete = false;
     }
-    return complete;
+    return _isComplete;
   }
   public override string GetDetailString()
   {
-    return $"{_name} - {_description} - Completed {_amountCompleted}/{_target} times.";
+    return $"{_name} - {_description} - Completed {_amountCompleted}/{_target} times. When Complete {_bonus} bonus.";
   }
   public override string GetStringRepresentation()
   {
-    return $"ChecklistGoal,{_name},{_description},{_points},{_target},{_bonus},{_amountCompleted}";
+    bool isComplete = Status();
+    return $"ChecklistGoal,{_name},{_description},{_points},{_isComplete},{_amountCompleted},{_target},{_bonus}";
   }
 
 

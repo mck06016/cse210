@@ -125,7 +125,7 @@ public class GoalTracker
 
   }
 
-  public void CreateGoal(string goalType, string name, string description, int points, int target = 0, int bonus = 0, bool isComplete = false, int amountCompleted = 0)
+  public void CreateGoal(string goalType, string name, string description, int points, bool isComplete = false, int amountCompleted = 0, int target = 0, int bonus = 0)
   {
     Goal newGoal;
 
@@ -135,10 +135,10 @@ public class GoalTracker
         newGoal = new SimpleGoal(name, description, points, isComplete);
         break;
       case "EternalGoal":
-        newGoal = new EternalGoal(name, description, points);
+        newGoal = new EternalGoal(name, description, points, isComplete, amountCompleted);
         break;
       case "ChecklistGoal":
-        newGoal = new ChecklistGoal(name, description, points, target, bonus, amountCompleted);
+        newGoal = new ChecklistGoal(name, description, points, isComplete, amountCompleted, target, bonus);
         break;
       default:
         Console.WriteLine("Invalid goal type.");
@@ -155,8 +155,8 @@ public class GoalTracker
     if (goalIndex >= 0 && goalIndex < _goals.Count)
     {
       var goal = _goals[goalIndex];
-      goal.RecordEvent();
-      _score = _score + goal.RecordEvent();
+      int newPoints = goal.RecordEvent();
+      _score = _score + newPoints;
     }
     else
     {
@@ -166,9 +166,10 @@ public class GoalTracker
 
   public void SaveGoal(string fileName)
   {
-    foreach (Goal goal in _goals)
+    using (StreamWriter file = new StreamWriter(fileName, append: false))
     {
-      using (StreamWriter file = new StreamWriter(fileName, append: true))
+      file.WriteLine(_score);
+      foreach (Goal goal in _goals)
       {
         file.WriteLine(goal.GetStringRepresentation());
       }
@@ -183,48 +184,41 @@ public class GoalTracker
       using (StreamReader reader = new StreamReader(fileName))
       {
         string line;
+
         while ((line = reader.ReadLine()) != null)
         {
+
           string[] parts = line.Split(",");
-          if (parts.Length >= 3)
+          if (parts.Length == 1)
+          {
+            int score = int.Parse(parts[0]);
+            SetScore(score);
+          }
+          else if (parts.Length >= 3)
           {
             string goalType = parts[0];
             string name = parts[1];
             string description = parts[2];
             int points = int.Parse(parts[3]);
+            bool isComplete = bool.Parse(parts[4]);
 
-            int target = 0; //Issue somewhere in here - - the target and amount completed is not being saved. 
-            int bonus = 0;
-            bool isComplete = false;
             int amountCompleted = 0;
-
-            if (parts.Length > 4)
-            {
-              switch (goalType)
-              {
-                case "SimpleGoal":
-                  isComplete = bool.Parse(parts[4]);
-                  break;
-                case "ChecklistGoal":
-                  target = int.Parse(parts[4]);
-                  break;
-              }
-            }
-            else if (parts.Length > 5)
-            {
-              bonus = int.Parse(parts[5]);
-              amountCompleted = int.Parse(parts[6]);
-            }
-            else
-            {
-              target = 0;
-              bonus = 0;
-              isComplete = false;
-              amountCompleted = 0;
-            }
+            int target = 0;  
+            int bonus = 0;
 
 
-            CreateGoal(goalType, name, description, points, target, bonus, isComplete, amountCompleted);
+            if (parts.Length > 5)
+            {
+              amountCompleted = int.Parse(parts[5]);
+             
+            }
+            if (parts.Length > 6)
+            {
+              target = int.Parse(parts[6]);
+              bonus = int.Parse(parts[7]);
+            }
+
+            CreateGoal(goalType, name, description, points, isComplete, amountCompleted, target, bonus);
           }
         }
       }

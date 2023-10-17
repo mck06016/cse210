@@ -21,15 +21,15 @@ public class EternalGoal : Goal
     return _count;
   }
   // Constructors
-  public EternalGoal(string name, string description, int points) : base(name, description, points)
+  public EternalGoal(string name, string description, int points, bool isComplete = false, int amountCompleted = 0) : base(name, description, points)
   {
-    _count = 0;
+    _count = amountCompleted;
   }
 
   // Methods
   public override bool Status()
   {
-    return base.Status();
+    return false;
   }
   public override int RecordEvent()
   {
@@ -42,7 +42,8 @@ public class EternalGoal : Goal
   }
   public override string GetStringRepresentation()
   {
-    return $"EternalGoal,{_name},{_description},{_points}";
+    bool isComplete = Status();
+    return $"EternalGoal,{_name},{_description},{_points},{isComplete},{_count}";
   }
 
 }

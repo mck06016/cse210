@@ -58,7 +58,7 @@ class Program
                     if (goalType == "SimpleGoal")
                     {
                         bool isComplete = false;
-                        goalTracker.CreateGoal(goalType, goalName, description, points, target: 0, bonus: 0, isComplete);
+                        goalTracker.CreateGoal(goalType, name, description, points, isComplete);
                     }
                     else if (goalType == "ChecklistGoal")
                     {
@@ -66,12 +66,16 @@ class Program
                         int target = int.Parse(Console.ReadLine());
                         Console.Write($"Enter the bonus for completing the goal {target} times:  ");
                         int bonus = int.Parse(Console.ReadLine());
+                        bool isComplete = false;
+                        int amountCompleted = 0;
 
-                        goalTracker.CreateGoal(goalType, goalName, description, points, target: 0, bonus: 0);
+                        goalTracker.CreateGoal(goalType, name, description, points, isComplete, amountCompleted, target, bonus);
                     }
                     else
                     {
-                        goalTracker.CreateGoal(goalType, goalName, description, points);
+                        bool isComplete = false;
+                        int amountCompleted = 0;
+                        goalTracker.CreateGoal(goalType, goalName, description, points, isComplete, amountCompleted);
                     }
                     break;
 
