@@ -15,20 +15,19 @@ public class Running : Exercise
     return _distance;
   }
 
-
   // Constructors
-  public Running(DateTime date, int length, float distance) : base(date, length)
+  public Running(string date, int length, float distance) : base(date, length)
   {
+    _name = "Running";
     _distance = distance;
   }
 
-
   // Methods
-  public override float Distance() // change void to float.
+  public override float Distance() 
   {
     return _distance;
   }
-  public override float Speed() // change void to float.
+  public override float Speed() 
   {
     // km/hour
     int length = GetLength();
@@ -36,15 +35,12 @@ public class Running : Exercise
 
     return speed;
   }
-  public override float Pace() // change void to float.
+  public override float Pace() 
   {
     int length = GetLength();
     float pace = length / _distance;
     return pace;
   }
-  public override void GetSummary() // change void to string.
-  {
 
-  }
 
 }

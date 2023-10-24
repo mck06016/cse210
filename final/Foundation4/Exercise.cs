@@ -7,16 +7,13 @@ public class Exercise
   */
 
   // Member Variables
-  protected DateTime _date = DateTime.Now;
-  protected int _length;  // Changed from design to reflect time in minutes.
+  protected string _date;
+  protected int _length;
+  protected string _name;
 
 
   // Methods (Getters and Setters)
-  public void SetDate(DateTime date)
-  {
-    _date = date;
-  }
-  public DateTime GetDate()
+  public string GetDate()
   {
     return _date;
   }
@@ -30,7 +27,7 @@ public class Exercise
   }
 
   // Constructors
-  public Exercise(DateTime date, int length)
+  public Exercise(string date, int length)
   {
     _date = date;
     _length = length;
@@ -49,9 +46,13 @@ public class Exercise
   {
     return 0;
   }
-  public virtual void GetSummary() // change void to string.
+  public string GetSummary()
   {
-
+    string date = GetDate();
+    float distance = Distance();
+    float speed = Speed();
+    float pace = Pace();
+    return $"{date} {_name} ({_length} min): Distance: {distance:0.00} km, Speed: {speed:0.00} kph, Pace: {pace:0.00} min/km";
   }
 
 

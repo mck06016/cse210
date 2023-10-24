@@ -16,33 +16,30 @@ public class Swimming : Exercise
   }
 
   // Constructors
-  public Swimming(DateTime date, int length, int laps) : base(date, length)
+  public Swimming(string date, int length, int laps) : base(date, length)
   {
+    _name = "Swimming";
     _laps = laps;
   }
 
   // Methods
-  public override float Distance() // change void to float.
+  public override float Distance() 
   {
     float distance = _laps * 50 / 1000;
     return distance;
   }
-  public override float Speed() // change void to float.
+  public override float Speed() 
   {
     float distance = Distance();
     int length = GetLength();
     float speed = (distance / length) * 60;
     return speed;
   }
-  public override float Pace() // change void to float.
+  public override float Pace() 
   {
     float speed = Speed();
     float pace = 60 / speed;
     return pace;
-  }
-  public override void GetSummary() // change void to string.
-  {
-
   }
 
 }

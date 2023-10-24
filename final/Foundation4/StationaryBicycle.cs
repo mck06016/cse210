@@ -16,8 +16,9 @@ public class StationaryBicycle : Exercise
   }
 
   // Constructors
-  public StationaryBicycle(DateTime date, int length, float speed) : base(date, length)
+  public StationaryBicycle(string date, int length, float speed) : base(date, length)
   {
+    _name = "Stationary Bicycle";
     _speed = speed;
   }
 
@@ -38,10 +39,7 @@ public class StationaryBicycle : Exercise
     float pace = 60 / _speed;
     return pace;  // min/km - - 1 KM/H  = 60 Min/KM
   }
-  public override void GetSummary() // change void to string.
-  {
 
-  }
 
 
 }
