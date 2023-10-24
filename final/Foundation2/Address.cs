@@ -18,13 +18,11 @@ public class Address
     _zipPostalCode = zipPostalCode;
     _country = country;
   }
-
   // Methods
   public string FormattedAddress()
   {
     return $"{_street}\n{_city}, {_stateProvince}\n{_zipPostalCode}\n{_country}";
   }
-
   public bool IsUSA()
   {
     bool isUSA;
@@ -39,5 +37,4 @@ public class Address
     }
     return isUSA;
   }
-
 }

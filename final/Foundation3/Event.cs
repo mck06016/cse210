@@ -45,5 +45,4 @@ public class Event
     Console.WriteLine($"Event Date: {_date}");
     Console.WriteLine($"Event Time: {_time}");
   }
-
 }

@@ -12,7 +12,6 @@ public class Customer
     _name = name;
     _address = address;
   }
-
   // Methods 
   public bool isInUSA()
   {
@@ -26,5 +25,4 @@ public class Customer
   {
     return _address.FormattedAddress();
   }
-
 }

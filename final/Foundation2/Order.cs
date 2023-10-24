@@ -12,10 +12,6 @@ public class Order
     _customer = customer;
     _products = new List<Product>();
   }
-
-  // Methods (Getters and Setters)
-
-
   // Methods
   public void AddProduct(Product product)
   {
@@ -38,8 +34,7 @@ public class Order
     Console.WriteLine(_customer.GetAddress());
 
   }
-
-  public void Cost()  // change to float once code is complete
+  public void Cost()
   {
     decimal total = 0;
     foreach (Product product in _products)
@@ -47,8 +42,7 @@ public class Order
       decimal price = Product.Price(product.GetPrice(), product.GetQuantity());
       total = total + price;
     }
-
-    //Address Shipping
+    //Shipping Cost
     if (_customer.isInUSA())
     {
       total += 5;
@@ -59,7 +53,6 @@ public class Order
       total += 35;
       Console.WriteLine("Shipping will be $35.");
     }
-
     Console.WriteLine($"Total Cost: ${total}.");
   }
 }

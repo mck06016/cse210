@@ -24,5 +24,4 @@ public class Address
   {
     return $"{_street}\n{_city}, {_stateProvince}\n{_zipPostalCode}\n{_country}";
   }
-
 }

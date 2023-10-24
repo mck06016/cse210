@@ -19,7 +19,4 @@ public class OutdoorEvent : Event
     StandardDetails();
     Console.WriteLine($"Expected Weather: {_expectedWeather}");
   }
-
-
-
 }

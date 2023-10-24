@@ -22,7 +22,4 @@ public class LectureEvent : Event
     Console.WriteLine($"Speaker: {_speaker}");
     Console.WriteLine($"The venue capacity is: {_capacity}");
   }
-
-
-
 }

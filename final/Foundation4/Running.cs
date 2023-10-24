@@ -21,7 +21,7 @@ public class Running : Exercise
   {
     // km/hour
     int length = GetLength();
-    float speed = (_distance / length) * 60;
+    float speed = _distance / length * 60;
 
     return speed;
   }

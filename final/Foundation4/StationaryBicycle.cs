@@ -16,7 +16,7 @@ public class StationaryBicycle : Exercise
   public override float Distance()
   {
     int length = GetLength();
-    float distance = (_speed * length) / 60;
+    float distance = _speed * length / 60;
     return distance;
   }
   public override float Speed()

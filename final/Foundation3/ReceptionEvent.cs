@@ -12,7 +12,6 @@ public class ReceptionEvent : Event
     _rsvpAddress = rsvpAddress;
   }
 
-
   // Methods
   public void FullDetails()
   {
@@ -20,6 +19,4 @@ public class ReceptionEvent : Event
     StandardDetails();
     Console.WriteLine($"RSVP to: {_rsvpAddress}");
   }
-
-
 }
