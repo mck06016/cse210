@@ -13,13 +13,10 @@ public class Exercise
 
 
   // Methods (Getters and Setters)
+  // Eliminated Unused Getters and Setters
   public string GetDate()
   {
     return _date;
-  }
-  public void SetLength(int length)
-  {
-    _length = length;
   }
   public int GetLength()
   {

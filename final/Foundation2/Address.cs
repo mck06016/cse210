@@ -8,13 +8,8 @@ public class Address
   private string _stateProvince;
   private string _zipPostalCode;
   private string _country;
-
+  // Eliminated Unused Getters and Setters
   // Constructors
-  public Address()
-  {
-
-  }
-
   public Address(string street, string city, string stateProvince, string zipPostalCode, string country)
   {
     _street = street;
@@ -23,8 +18,6 @@ public class Address
     _zipPostalCode = zipPostalCode;
     _country = country;
   }
-
-  // Methods (Getters & Setters)
 
   // Methods
   public string FormattedAddress()

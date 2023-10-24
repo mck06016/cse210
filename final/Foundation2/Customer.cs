@@ -1,13 +1,11 @@
 using System;
-using System.Collections.Concurrent;
 
 public class Customer
 {
   // Member Variables
   private string _name;
-
   private Address _address;
-
+  // Eliminated Unused Getters and Setters
   // Constructors
   public Customer(string name, Address address)
   {
@@ -28,9 +26,5 @@ public class Customer
   {
     return _address.FormattedAddress();
   }
-
-
-
-
 
 }

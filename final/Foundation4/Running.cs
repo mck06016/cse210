@@ -4,17 +4,7 @@ public class Running : Exercise
 {
   // Member Variables
   private float _distance;
-
-  // Methods (Getters and Setters)
-  public void SetDistance(float distance)
-  {
-    _distance = distance;
-  }
-  public float GetDistance()
-  {
-    return _distance;
-  }
-
+  // Eliminated Unused Getters and Setters
   // Constructors
   public Running(string date, int length, float distance) : base(date, length)
   {
@@ -23,11 +13,11 @@ public class Running : Exercise
   }
 
   // Methods
-  public override float Distance() 
+  public override float Distance()
   {
     return _distance;
   }
-  public override float Speed() 
+  public override float Speed()
   {
     // km/hour
     int length = GetLength();
@@ -35,12 +25,11 @@ public class Running : Exercise
 
     return speed;
   }
-  public override float Pace() 
+  public override float Pace()
   {
     int length = GetLength();
     float pace = length / _distance;
     return pace;
   }
-
 
 }

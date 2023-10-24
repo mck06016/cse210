@@ -4,24 +4,13 @@ public class StationaryBicycle : Exercise
 {
   // Member Variables
   public float _speed;
-
-  // Methods (Getters and Setters)
-  public void SetSpeed(float speed)
-  {
-    _speed = speed;
-  }
-  public float GetSpeed()
-  {
-    return _speed;
-  }
-
+  // Eliminated Unused Getters and Setters
   // Constructors
   public StationaryBicycle(string date, int length, float speed) : base(date, length)
   {
     _name = "Stationary Bicycle";
     _speed = speed;
   }
-
 
   // Methods
   public override float Distance()

@@ -8,13 +8,8 @@ public class Address
   private string _stateProvince;
   private string _zipPostalCode;
   private string _country;
-
+  // Eliminated Unused Getters and Setters
   // Constructors
-  public Address()
-  {
-
-  }
-
   public Address(string street, string city, string stateProvince, string zipPostalCode, string country)
   {
     _street = street;
@@ -24,29 +19,10 @@ public class Address
     _country = country;
   }
 
-  // Methods (Getters & Setters)
-
   // Methods
   public string FormattedAddress()
   {
     return $"{_street}\n{_city}, {_stateProvince}\n{_zipPostalCode}\n{_country}";
   }
-
-  public bool IsUSA()
-  {
-    bool isUSA;
-
-    if (_country.ToLower() == "usa" ^ _country.ToLower() == "united states" ^ _country.ToLower() == "united states of america")
-    {
-      isUSA = true;
-    }
-    else
-    {
-      isUSA = false;
-    }
-    return isUSA;
-  }
-
-
 
 }

@@ -4,21 +4,11 @@ public class ReceptionEvent : Event
 {
   // Member Variables
   private string _rsvpAddress;
-
-
-  // Getters and Setters
-  public void SetRSVPAddress(string rsvpAddress)
-  {
-    _rsvpAddress = rsvpAddress;
-  }
-  public string GetRSVPAddress()
-  {
-    return _rsvpAddress;
-  }
-
+  // Eliminated Unused Getters and Setters
   // Constructors
   public ReceptionEvent(string title, string description, string date, string time, Address address, string rsvpAddress) : base(title, description, date, time, address)
   {
+    _event = "Reception";
     _rsvpAddress = rsvpAddress;
   }
 
@@ -26,16 +16,10 @@ public class ReceptionEvent : Event
   // Methods
   public void FullDetails()
   {
-    Console.WriteLine("Event Type: Reception");
+    Console.WriteLine($"Event Type: {_event}");
     StandardDetails();
     Console.WriteLine($"RSVP to: {_rsvpAddress}");
   }
 
-  public void ShortDescription()
-  {
-    Console.WriteLine("Event Type: Reception");
-    Console.WriteLine($"Event Title: {GetTitle()}");
-    Console.WriteLine($"Event Date: {GetDate()}");
-  }
 
 }

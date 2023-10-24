@@ -7,42 +7,19 @@ public class Event
   private string _description;
   private string _date;
   private string _time;
+  protected string _event;
   Address _address;
 
   // Getters and Setters
-  public void SetTitle(string title)
-  {
-    _title = title;
-  }
   public string GetTitle()
   {
     return _title;
-  }
-  public void SetDescription(string description)
-  {
-    _description = description;
-  }
-  public string GetDescription()
-  {
-    return _description;
-  }
-  public void SetDate(string date)
-  {
-    _date = date;
   }
   public string GetDate()
   {
     return _date;
   }
-  public void SetTime(string time)
-  {
-    _time = time;
-  }
-  public string GetTime()
-  {
-    return _time;
-  }
-
+  // Eliminated Unused Getters and Setters
   // Constructors
   public Event(string title, string description, string date, string time, Address address)
   {
@@ -54,6 +31,12 @@ public class Event
   }
 
   // Methods
+  public void ShortDescription()
+  {
+    Console.WriteLine($"Event Type: {_event}");
+    Console.WriteLine($"Event Title: {GetTitle()}");
+    Console.WriteLine($"Event Date: {GetDate()}");
+  }
   public void StandardDetails()
   {
     Console.WriteLine($"Event Title: {_title}");

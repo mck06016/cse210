@@ -9,7 +9,7 @@ class Program
         List<Exercise> _exercise = new List<Exercise>();
 
         // Pre-entered Exercises
-        
+
         Running e1 = new("October 19, 2023", 30, 5.5f);
         _exercise.Add(e1);
 
@@ -20,7 +20,7 @@ class Program
         _exercise.Add(e3);
 
         Console.WriteLine("Exercise: ");
-        
+
         foreach (Exercise exercise in _exercise)
         {
             Console.WriteLine(exercise.GetSummary());

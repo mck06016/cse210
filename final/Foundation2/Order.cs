@@ -3,9 +3,9 @@ using System;
 public class Order
 {
   // Member variables
-  List<Product> _products;
+  private List<Product> _products;
   private Customer _customer;
-
+  // Eliminated Unused Getters and Setterss
   // Constructors
   public Order(Customer customer)
   {
@@ -44,7 +44,7 @@ public class Order
     decimal total = 0;
     foreach (Product product in _products)
     {
-      decimal price = product.Price(product.GetPrice(), product.GetQuantity());
+      decimal price = Product.Price(product.GetPrice(), product.GetQuantity());
       total = total + price;
     }
 
